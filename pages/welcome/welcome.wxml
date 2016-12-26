@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!--<view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -7,4 +7,11 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+</view>-->
+<view>
+    <image style="width:200rpx;height:200rpx;" src="/images/avatar/4.png"></image>
+    <text>Hello, xiaoC</text>
+    <view>
+        <text>开启小程序之旅</text>
+    </view>
 </view>
