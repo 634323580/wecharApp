@@ -8,10 +8,10 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>-->
-<view>
-    <image style="width:200rpx;height:200rpx;" src="/images/avatar/4.png"></image>
-    <text>Hello, xiaoC</text>
-    <view>
-        <text>开启小程序之旅</text>
-    </view>
+<view class="container">
+    <image class="userinfo-avatar" src="/images/avatar/4.png"></image>
+    <text class="userinfo-nickname">Hello , xiaoC</text>
+  <view class="motto" bindtap="bindViewTap">
+    <text class="motto-font">开启小程序之旅</text>
+  </view>
 </view>
