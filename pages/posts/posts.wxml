@@ -1,8 +1,8 @@
 <!--pages/posts/posts.wxml-->
 <view class="posts">
     <!--vertical 横向滚动-->
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000">
-        <swiper-item>
+    <swiper vertical="{{false}}" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000">
+        <swiper-item >
             <image src="/images/iqiyi.png"></image>
         </swiper-item>
         <swiper-item>
@@ -12,19 +12,23 @@
             <image src="/images/wx.png"></image>
         </swiper-item>
     </swiper>
-    <view class="post-container" wx:for="{{items}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
-        <view class="post-aurhor-date">
-            <image class="post-aurhor" src="{{item.avatar}}"></image>
-            <text class="post-date">{{item.date}}</text>
+    <!--默认就是 item  wx:for-item="item"自定义键值  wx:key="idx" 默认index-->
+    <block wx:for="{{items}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+        <view class="post-container">
+            <view class="post-aurhor-date">
+                <image class="post-aurhor" src="{{item.avatar}}"></image>
+                <text class="post-date">{{item.date}}</text>
+            </view>
+            <text class="post-title">{{item.title}}</text>
+            <image class="post-image" src="{{item.headImgSrc}}"></image>
+            <text class="post-content">{{item.content}}</text>
+            <view class="post-link">
+                <image class="post-link-image" src="/images/icon/chat.png"></image>
+                <text class="post-link-font">{{item.collection}}</text>
+                <image class="post-link-image" src="/images/icon/chat1.png"></image>
+                <text class="post-link-font">{{item.reading}}</text>
+            </view>
         </view>
-        <text class="post-title">{{item.title}}</text>
-        <image class="post-image" src="{{item.headImgSrc}}"></image>
-        <text class="post-content">{{item.content}}</text>
-        <view class="post-link">
-            <image class="post-link-image" src="/images/icon/chat.png"></image>
-            <text class="post-link-font">{{item.collection}}</text>
-            <image class="post-link-image" src="/images/icon/chat1.png"></image>
-            <text class="post-link-font">{{item.reading}}</text>
-        </view>
-    </view>
+    </block>
+
 </view>

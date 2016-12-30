@@ -2,11 +2,13 @@
 import localData from "../../posts-data.js"
 Page({
   data:{
-    items: localData
+    items: []
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数1
-    console.log(this.data.items);
+    this.setData({
+      items: localData
+    });
   },
   onReady:function(){
     // 页面渲染完成3

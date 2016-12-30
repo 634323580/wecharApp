@@ -11,7 +11,8 @@
 <view class="container">
     <image class="userinfo-avatar" src="/images/avatar/4.png"></image>
     <text class="userinfo-nickname">Hello , xiaoC</text>
-  <view class="motto" bindtap="bindViewTap">
+     <!--catchtap="letsgo" 阻止冒泡行为-->
+  <view class="motto" bindtap="letsgo">
     <text class="motto-font">开启小程序之旅</text>
   </view>
 </view>
