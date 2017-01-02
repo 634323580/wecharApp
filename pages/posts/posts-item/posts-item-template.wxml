@@ -1,0 +1,19 @@
+<!--pages/posts/posts.wxml-->
+    <!--默认就是 item  wx:for-item="item"自定义键值  wx:key="idx" 默认index-->
+<template name="postItem">
+        <view class="post-container">
+            <view class="post-aurhor-date">
+                <image class="post-aurhor" src="{{avatar}}"></image>
+                <text class="post-date">{{date}}</text>
+            </view>
+            <text class="post-title">{{title}}</text>
+            <image class="post-image" src="{{headImgSrc}}"></image>
+            <text class="post-content">{{content}}</text>
+            <view class="post-link">
+                <image class="post-link-image" src="/images/icon/chat.png"></image>
+                <text class="post-link-font">{{collection}}</text>
+                <image class="post-link-image" src="/images/icon/chat1.png"></image>
+                <text class="post-link-font">{{reading}}</text>
+            </view>
+        </view>
+</template>

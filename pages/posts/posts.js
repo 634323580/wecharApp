@@ -1,5 +1,5 @@
 // pages/posts/posts.js
-import localData from "../../posts-data.js"
+import localData from "../../data/posts-data.js"
 Page({
   data:{
     items: []
@@ -9,6 +9,12 @@ Page({
     this.setData({
       items: localData
     });
+  },
+  onPostTap: function(event) {
+    let posId = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: `./post-detail/post-detail?id=${posId}`
+    })
   },
   onReady:function(){
     // 页面渲染完成3

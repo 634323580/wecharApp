@@ -1,1 +1,5 @@
-{}
+{
+     "navigationBarBackgroundColor": "#b3d4db",
+    "navigationBarTitleText": "欢迎",
+    "navigationBarTextStyle":"black"
+}

@@ -1,9 +1,8 @@
 Page({
     letsgo: function(event) {
-        // wx.navigateTo({
+        // wx.redirectTo({
         //     url: "../posts/posts"
         // })
-        console.log(event);
         // event.stopPropagation();
         wx.navigateTo({
            url: "../posts/posts"
