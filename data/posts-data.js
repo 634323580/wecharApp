@@ -13,9 +13,9 @@ var localData = [
     avatar: "/images/avatar/4.png",
     postId: 0,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46",
-      title: "此时此刻",
-      coverImg: "../images/music/xuwei.jpg"
+      url: "http://m10.music.126.net/20170104180109/0ea052a6be370ab832ad6e00c1f7ddd4/ymusic/6e01/a4d4/bbef/2dda07904eb54d44abb278165e1c6ead.mp3",
+      title: "告白气球",
+      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
     }
   },
   {
