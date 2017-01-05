@@ -1,7 +1,6 @@
 <view class="container">
-    <image class="head-img" src="{{postData.headImgSrc}}"></image>
+    <image class="head-img" src="{{isPlatIngMusic ?  postData.music.coverImg : postData.headImgSrc}}"></image>
     <image catchtap="onMusicTap" class="audio" src="{{isPlatIngMusic? '/images/music/music-stop.png' : '/images/music/music-start.png'}}"></image>
-    <!--<image catchtap="onMusicTap" wx:else class="audio" src="/images/music/music-stop.png"></image>-->
     <view class="author-data">
         <image class="avatar" src="{{postData.avatar}}"></image>
         <text class="author">{{postData.author}}</text>

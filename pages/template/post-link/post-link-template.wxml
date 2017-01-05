@@ -1,0 +1,8 @@
+<template name="postLink">
+    <view class="post-link">
+        <image class="post-link-image" src="/images/icon/chat.png"></image>
+        <text class="post-link-font">{{item.collection}}</text>
+        <image class="post-link-image" src="/images/icon/view.png"></image>
+        <text class="post-link-font">{{item.reading || 0}}</text>
+    </view>
+</template>

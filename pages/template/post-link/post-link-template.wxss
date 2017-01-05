@@ -1,0 +1,17 @@
+.post-link{
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    line-height: 16px;
+    margin-left: 10px;
+}
+.post-link-image{
+    width:16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.post-link-font{
+    vertical-align: middle;
+    margin-right: 20px;
+}

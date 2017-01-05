@@ -7,4 +7,11 @@
     width: inherit;
     height: inherit;
 }
-@import "./posts-item/posts-item-template.wxss";
+.wx-swiper-dot::before{
+    color:#ccc;
+    font-size: 80rpx;
+}
+.wx-swiper-dot-active::before{
+    color:#1AAD16;
+}
+@import "/pages/template/posts-item/posts-item-template.wxss";

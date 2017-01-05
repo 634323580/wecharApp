@@ -1,5 +1,5 @@
 import postsData from "../../../data/posts-data.js"
-
+let app = getApp();
 Page({
   data: {
     postId: '',
@@ -39,6 +39,64 @@ Page({
       postsCollected[this.data.postId] = false;
       wx.setStorageSync('postsCollected', postsCollected);
     }
+    // 判断音乐是否在播放 和 当前文章id是不是当前播放音乐的文章id，如果是则显示在播放
+    if(app.gloabalData.g_isPlatIngMusic && app.gloabalData.g_currentMusicPostId === this.data.postId) {
+      this.setData({
+        isPlatIngMusic: true
+      });
+    }
+    //监听音乐播放暂停
+    this.setMusicMonitor();
+
+
+    let linkNumber = wx.getStorageSync('linkNumber');
+    if(!linkNumber[this.data.postId]) {
+      linkNumber[this.data.postId] = 1;
+      wx.setStorageSync('linkNumber', linkNumber)
+    } else {
+      linkNumber[this.data.postId] += 1;
+      wx.setStorageSync('linkNumber', linkNumber)
+    }
+
+
+  },
+  /***
+   * 修复音乐播放总部开关按钮bug思路
+   * 点击播放按钮才记录当前文章id
+   * 对比当前id是不是和上一个播放的id一样，如果不是，则不对当前文章做任何操作，并且设置全局播放开关
+   */
+  // 音乐播放和暂停都经过这个函数
+  setMusicMonitor: function() {
+    // 监听音乐播放
+    wx.onBackgroundAudioPlay(() => {
+        let pages = getCurrentPages();
+        if(pages[pages.length - 1].data.postId === this.data.postId) {
+            if(app.gloabalData.g_currentMusicPostId == this.data.postId) {
+              this.setData({
+                isPlatIngMusic: true
+              });
+            }
+        }
+        app.gloabalData.g_isPlatIngMusic = true;
+        // 音乐播放的时候记录当前播放音乐的文章id
+        // app.gloabalData.g_currentMusicPostId = this.data.postId;
+    });
+    // 监听音乐停止
+    wx.onBackgroundAudioPause(() => {
+      let pages = getCurrentPages();
+      // console.log(pages[pages.length - 1].data.postId)
+      // console.log(this.data.postId)
+        if(pages[pages.length - 1].data.postId === this.data.postId) {
+            if(app.gloabalData.g_currentMusicPostId == this.data.postId) {
+                this.setData({
+                  isPlatIngMusic: false
+                });
+            }
+        }
+        app.gloabalData.g_isPlatIngMusic = false;
+        // 音乐暂停的时候清除当前播放音乐的文章id
+        // app.gloabalData.g_currentMusicPostId = null;
+    });
   },
   onCollectionTap: function (event) {
     // 点击改变缓存状态
@@ -103,10 +161,12 @@ Page({
     let isPlatIngMusic = this.data.isPlatIngMusic;
     let pageMusicId = postsData[this.data.postId].music
     if(isPlatIngMusic) {
-     wx.stopBackgroundAudio()
+     wx.pauseBackgroundAudio()
       this.setData({
         isPlatIngMusic: false
       })
+      app.gloabalData.g_isPlatIngMusic = false;
+      // app.gloabalData.g_currentMusicPostId = this.data.postId;
     } else {
       wx.playBackgroundAudio({
         dataUrl: pageMusicId.url,
@@ -117,6 +177,8 @@ Page({
       this.setData({
         isPlatIngMusic: true
       })
+      app.gloabalData.g_isPlatIngMusic = true;
+      app.gloabalData.g_currentMusicPostId = this.data.postId;
     }
   }
 })

@@ -42,20 +42,4 @@
     letter-spacing: 2px;
     line-height: 40rpx;
 }
-.post-link{
-    font-size: 13px;
-    display: flex;
-    flex-direction: row;
-    line-height: 16px;
-    margin-left: 10px;
-}
-.post-link-image{
-    width:16px;
-    height: 16px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-.post-link-font{
-    vertical-align: middle;
-    margin-right: 20px;
-}
+@import '/pages/template/post-link/post-link-template.wxss';

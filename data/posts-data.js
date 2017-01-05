@@ -13,9 +13,9 @@ var localData = [
     avatar: "/images/avatar/4.png",
     postId: 0,
     music: {
-      url: "http://m10.music.126.net/20170104180109/0ea052a6be370ab832ad6e00c1f7ddd4/ymusic/6e01/a4d4/bbef/2dda07904eb54d44abb278165e1c6ead.mp3",
-      title: "告白气球",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100004HLusI2lLjZy.m4a?fromtag=38',
+      title: "万晓利，女儿情",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000004Wv5BO30pPc0.jpg?max_age=2592000"
     }
   },
   {
@@ -32,9 +32,9 @@ var localData = [
     avatar: "/images/avatar/3.png",
     postId: 1,
     music: {
-      url: "http://m10.music.126.net/20170104180633/b9dfb2350d765457fff7e75c63c4d517/ymusic/f2d4/b222/5aad/ff1bdd82042531aa180ed80afb777cbf.mp3",
-      title: "双截棍",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100002I8eGJ28BI17.m4a?fromtag=38',
+      title: "谭咏麟：朋友",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000004eGsCN3SUheO.jpg?max_age=2592000"
     }
   },
   {
@@ -51,9 +51,9 @@ var localData = [
     avatar: "/images/avatar/1.png",
     postId: 2,
     music: {
-      url: "http://m10.music.126.net/20170104180731/bb223912e07217cbad0a6b24c3d23c87/ymusic/5e8c/9fbd/460a/63af292aec1f060e9a1c23a8c1bbff95.mp3",
-      title: "晴天",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100000Zn0vS4fKKo8.m4a?fromtag=38',
+      title: "张国荣，沉默是金",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003at0mJ2YrR2H.jpg?max_age=2592000"
     }
   },
   {
@@ -70,9 +70,9 @@ var localData = [
     avatar: "/images/avatar/5.png",
     postId: 3,
     music: {
-      url: "http://m10.music.126.net/20170104180840/8f63a1c9ba24ac43d25c9b70ded2713a/ymusic/5b2a/b496/0597/b6183f5fb0e562bf56f6691658e48d77.mp3",
-      title: "说走就走",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100000Zn0vS4fKKo8.m4a?fromtag=38',
+      title: "张国荣，沉默是金",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003at0mJ2YrR2H.jpg?max_age=2592000"
     }
   },
   {
@@ -89,9 +89,9 @@ var localData = [
     avatar: "../../../images/avatar/3.png",
     postId: 4,
     music: {
-      url: "http://m10.music.126.net/20170104181052/03185a21229742c4a1b6d90ee947f1b2/ymusic/cb30/34ab/0145/ddd1aaf0e498764ccbee3dcbd46b5a49.mp3",
-      title: "蒲公英的约定",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100000Zn0vS4fKKo8.m4a?fromtag=38',
+      title: "张国荣，沉默是金",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003at0mJ2YrR2H.jpg?max_age=2592000"
     }
   },
   {
@@ -108,9 +108,9 @@ var localData = [
     avatar: "/images/avatar/4.png",
     postId: 5,
     music: {
-      url: 'http://m10.music.126.net/20170104181151/7bcb667d7b49dc40e2bec9f01f0597d3/ymusic/4a1e/f0f8/2173/a88abe15ae88f3551142a92c18195ad0.mp3',
-      title: "搁浅",
-      coverImg: "http://p3.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=130y130"
+      url: 'http://ws.stream.qqmusic.qq.com/C100000Zn0vS4fKKo8.m4a?fromtag=38',
+      title: "张国荣，沉默是金",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003at0mJ2YrR2H.jpg?max_age=2592000"
     }
   },
 ]

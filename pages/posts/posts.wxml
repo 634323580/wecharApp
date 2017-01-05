@@ -1,23 +1,19 @@
 <!--template模板引入-->
-<import src="posts-item/posts-item-template.wxml" />
+<import src="/pages/template/posts-item/posts-item-template.wxml" />
 <view class="posts">
     <!--vertical 横向滚动-->
-    <swiper vertical="{{false}}" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000">
-        <swiper-item >
-            <image src="/images/iqiyi.png"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/vr.png"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/wx.png"></image>
-        </swiper-item>
+    <swiper catchtap="onSwiperTap" vertical="{{false}}" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000">
+        <block wx:for="{{items}}" wx:key="item.postId">
+            <swiper-item>
+                <image data-postId="{{item.postId}}" src="{{item.headImgSrc}}"></image>
+            </swiper-item>
+        </block>
     </swiper>
     <!--默认就是 item  wx:for-item="item"自定义键值  wx:key="idx" 默认index-->
     <block wx:for="{{items}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
         <!-- ...item相当于把item对象展开，直接{{avatar}}使用，无需item.avatar -->
         <view catchtap="onPostTap" data-postId="{{item.postId}}">
-            <template is="postItem" data="{{...item}}" />
+            <template is="postItem" data="{{item}}" />
         </view>
     </block>
 

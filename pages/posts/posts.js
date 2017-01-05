@@ -6,6 +6,20 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数1
+    //获取文章查看数。
+    let linkNumber = wx.getStorageSync('linkNumber');
+    if(!linkNumber) {
+      linkNumber = {}
+      wx.setStorageSync('linkNumber', linkNumber)
+    } else {
+      localData.forEach((item) => {
+        if(linkNumber[item.postId]) {
+          item.reading = linkNumber[item.postId];
+        } else {
+           item.reading = 0;
+        }
+      })
+    }
     this.setData({
       items: localData
     });
@@ -16,11 +30,30 @@ Page({
       url: `./post-detail/post-detail?id=${posId}`
     })
   },
+  onSwiperTap: function(event) {
+    let posId = event.target.dataset.postid;
+    wx.navigateTo({
+      url: `./post-detail/post-detail?id=${posId}`
+    })
+  },
   onReady:function(){
     // 页面渲染完成3
   },
   onShow:function(){
-    // 页面显示2
+    let linkNumber = wx.getStorageSync('linkNumber');
+    if(!linkNumber) {
+      linkNumber = {}
+      wx.setStorageSync('linkNumber', linkNumber)
+    } else {
+      localData.forEach((item) => {
+        if(linkNumber[item.postId]) {
+          item.reading = linkNumber[item.postId];
+        }
+      })
+    }
+    this.setData({
+      items: localData
+    });
   },
   onHide:function(){
     // 页面隐藏
