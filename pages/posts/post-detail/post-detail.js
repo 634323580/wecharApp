@@ -47,8 +47,14 @@ Page({
     }
     //监听音乐播放暂停
     this.setMusicMonitor();
+    // 监听音乐停止
+    wx.onBackgroundAudioStop(() => {
+      this.setData({
+        isPlatIngMusic: false
+      });
+    });
 
-
+    // 记录当前文章阅读量
     let linkNumber = wx.getStorageSync('linkNumber');
     if(!linkNumber[this.data.postId]) {
       linkNumber[this.data.postId] = 1;
@@ -57,13 +63,11 @@ Page({
       linkNumber[this.data.postId] += 1;
       wx.setStorageSync('linkNumber', linkNumber)
     }
-
-
   },
   /***
    * 修复音乐播放总部开关按钮bug思路
    * 点击播放按钮才记录当前文章id
-   * 对比当前id是不是和上一个播放的id一样，如果不是，则不对当前文章做任何操作，并且设置全局播放开关
+   * 点击总部开关的时候对比当前id是不是和全局记录的id一样，如果不是，则不对当前文章做任何操作，并且设置全局播放开关
    */
   // 音乐播放和暂停都经过这个函数
   setMusicMonitor: function() {
@@ -81,7 +85,7 @@ Page({
         // 音乐播放的时候记录当前播放音乐的文章id
         // app.gloabalData.g_currentMusicPostId = this.data.postId;
     });
-    // 监听音乐停止
+    // 监听音乐暂停
     wx.onBackgroundAudioPause(() => {
       let pages = getCurrentPages();
       // console.log(pages[pages.length - 1].data.postId)
