@@ -42,4 +42,4 @@
     letter-spacing: 2px;
     line-height: 40rpx;
 }
-@import '/pages/template/post-link/post-link-template.wxss';
+@import '/pages/template/posts-item/post-link/post-link-template.wxss';

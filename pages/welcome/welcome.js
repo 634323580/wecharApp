@@ -4,11 +4,8 @@ Page({
         //     url: "../posts/posts"
         // })
         // event.stopPropagation();
-        wx.navigateTo({
+        wx.switchTab({
            url: "../posts/posts"
         })
-    },
-    subTap: function() {
-        console.log('sb')
     }
 });

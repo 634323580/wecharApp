@@ -1,6 +1,6 @@
 <!--pages/posts/posts.wxml-->
     <!--默认就是 item  wx:for-item="item"自定义键值  wx:key="idx" 默认index-->
-<import src="/pages/template/post-link/post-link-template.wxml" />
+<import src="/pages/template/posts-item/post-link/post-link-template.wxml" />
 <template name="postItem">
         <view class="post-container">
             <view class="post-aurhor-date">

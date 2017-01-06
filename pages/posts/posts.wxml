@@ -16,5 +16,4 @@
             <template is="postItem" data="{{item}}" />
         </view>
     </block>
-
 </view>
