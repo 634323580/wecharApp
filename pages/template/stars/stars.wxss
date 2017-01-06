@@ -1,0 +1,22 @@
+.stars-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.stars-container .stars{
+    display: flex;
+    flex-direction: row;
+    height: 17rpx;
+    margin-right: 24rpx;
+    /*margin-top: 6rpx;*/
+    /*也可以实现水平居中*/
+    /*align-self: center;*/
+}
+.stars-container .stars image{
+    padding-left: 3rpx;
+    height: 17rpx;
+    width: 17rpx;
+}
+.star-score{
+    color:#1f3463;
+}
