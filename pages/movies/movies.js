@@ -19,8 +19,6 @@ Page({
         .then(res => {
           return this.getmovieListData(top250Url, 'top250');
         })
-        .then(res => {
-        })
   },
   getmovieListData: function (url, settedKey) {
     return new Promise((resolve, reject) => {
@@ -55,13 +53,12 @@ Page({
 
       let hasDecimal = number % 1 !== 0;
       if(hasDecimal) {
-        starState.push('none-star');
+        starState.push('clson-star');
       }
 
       while(starState.length < 5) {
-        starState.push('chat');
+        starState.push('none-star');
       }
-      console.log(starState)
       return starState;
   },
 

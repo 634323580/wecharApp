@@ -2,10 +2,10 @@
 <import src="/pages/template/posts-item/posts-item-template.wxml" />
 <view class="posts">
     <!--vertical 横向滚动-->
-    <swiper catchtap="onSwiperTap" vertical="{{false}}" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000">
+    <swiper vertical="{{false}}" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000">
         <block wx:for="{{items}}" wx:key="item.postId">
             <swiper-item>
-                <image data-postId="{{item.postId}}" src="{{item.headImgSrc}}"></image>
+                <image catchtap="onPostTap" data-postId="{{item.postId}}" src="{{item.headImgSrc}}"></image>
             </swiper-item>
         </block>
     </swiper>
