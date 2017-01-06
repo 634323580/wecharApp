@@ -36,9 +36,6 @@ Page({
       url: `./post-detail/post-detail?id=${posId}`
     })
   },
-  onReady:function(){
-    // 页面渲染完成3
-  },
   onShow:function(){
     let linkNumber = wx.getStorageSync('linkNumber');
     if(!linkNumber) {
@@ -54,11 +51,5 @@ Page({
     this.setData({
       items: localData
     });
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
   }
 })
