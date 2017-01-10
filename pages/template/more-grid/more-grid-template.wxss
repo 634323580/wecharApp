@@ -1,0 +1,10 @@
+@import '../movie/movie-template.wxss';
+.moreGrid-container{
+    display: flex;
+    flex-wrap: wrap;
+    /*padding:0 10rpx;*/
+    padding: 0 9rpx;
+}
+.movie-container{
+    margin:22rpx 0;
+}

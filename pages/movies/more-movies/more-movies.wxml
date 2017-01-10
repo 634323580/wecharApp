@@ -1,0 +1,5 @@
+<import src="/pages/template/more-grid/more-grid-template.wxml" />
+    <view class="more-movies-contaoner">
+        <template is="moreGrid" data="{{movies}}"></template>
+        <view class="none-more" wx:if="{{noneMore}}"><text>没有更多...</text></view>
+    </view>

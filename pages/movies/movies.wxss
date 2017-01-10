@@ -1,4 +1,37 @@
 @import '/pages/template/movie-list/movie-list-template.wxss';
+@import '/pages/template/more-grid/more-grid-template.wxss';
 .container{
     background-color: #f2f2f2;
+}
+.search{
+    background: #f2f2f2;
+    height: 80rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.search-img{
+    margin:auto 0 auto 20rpx;
+}
+.placeholder{
+    font-size: 14px;
+    color:#d1d1d1;
+    margin-left: 20rpx;
+}
+.search input{
+    width: 600rpx;
+    height: 100%;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+}
+.search-pannel{
+    position: absolute;
+    top: 80rpx;
+    bottom: 0;
+}
+.xx-img{
+    width: 30rpx;
+    height: 30rpx;
+    margin:auto 0 auto 0;
+    padding:0 25rpx;
 }

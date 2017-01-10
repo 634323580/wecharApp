@@ -47,13 +47,6 @@ Page({
     }
     //监听音乐播放暂停
     this.setMusicMonitor();
-    // 监听音乐停止
-    wx.onBackgroundAudioStop(() => {
-      this.setData({
-        isPlatIngMusic: false
-      });
-    });
-
     // 记录当前文章阅读量
     let linkNumber = wx.getStorageSync('linkNumber');
     if(!linkNumber[this.data.postId]) {
@@ -100,6 +93,12 @@ Page({
         app.gloabalData.g_isPlatIngMusic = false;
         // 音乐暂停的时候清除当前播放音乐的文章id
         // app.gloabalData.g_currentMusicPostId = null;
+    });
+    // 监听音乐停止
+    wx.onBackgroundAudioStop(() => {
+      this.setData({
+        isPlatIngMusic: false
+      });
     });
   },
   onCollectionTap: function (event) {

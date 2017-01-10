@@ -1,0 +1,10 @@
+/* pages/movies/more-movies/more-movies.wxss */
+@import '/pages/template/more-grid/more-grid-template.wxss';
+.scroll-movies-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.more-movies-contaoner{
+    background:#fff;
+}

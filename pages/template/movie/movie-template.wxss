@@ -12,4 +12,8 @@
 .movie-title{
     margin-bottom: 16rpx;
     font-size: 24rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200rpx;
 }
