@@ -31,6 +31,12 @@ Page({
       title: this.data.navigationTitle
     });
   },
+  onMovieTap: function(event) {
+    let movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: `../movies-detail/movies-detail?id=${movieId}`
+    });
+  },
   // getMoreMovie: function (url) {
   //   wx.showNavigationBarLoading();
   //   return util.http(url)
@@ -72,5 +78,13 @@ Page({
     }
     let dataUrl = this.data.moreUrl + `?start=${this.data.start}`;
     util.getMoreMovie(dataUrl, this);
-  }
+  },
+  /*查看图片*/
+  viewMoviePostImg: function (e) {
+    var src = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: [src] // 需要预览的图片http链接列表
+    })
+  },
 })
