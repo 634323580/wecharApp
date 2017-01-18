@@ -37,6 +37,19 @@ Page({
         }
       })
   },
+  // 绑定数据
+  setMoviesData: function(data) {
+      this.data.total = data.total;
+      this.setData({
+          movies: this.data.movies.concat(data.movies)
+      });
+      this.data.start += 20;
+      if (this.data.start > data.total) {
+        this.setData({
+          noneMore: true
+        });
+      }
+  },
   // 跳转更多
   onMoreTap: function (event) {
     let category = event.currentTarget.dataset.category;
@@ -141,13 +154,19 @@ Page({
       noneMore: false
     });
     let searchUrl = `${app.gloabalData.doubanBase}/v2/movie/search?start=${this.data.start}&q=${this.data.seatchVal}`;
-    util.getMoreMovie(searchUrl, this)
+    util.getMoreMovie(searchUrl)
+        .then(res => {
+          this.setMoviesData(res);
+        })
   },
   searchBindscrolltolower: function () {
     if (this.data.start > this.data.total) {
       return;
     }
     let searchUrl = `${app.gloabalData.doubanBase}/v2/movie/search?start=${this.data.start}&q=${this.data.seatchVal}`;
-    util.getMoreMovie(searchUrl, this)
+    util.getMoreMovie(searchUrl)
+        .then(res => {
+          this.setMoviesData(res);
+        })
   }
 })

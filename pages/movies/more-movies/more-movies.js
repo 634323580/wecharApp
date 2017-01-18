@@ -23,7 +23,10 @@ Page({
         break;
     }
 
-    util.getMoreMovie(dataUrl, this)
+    util.getMoreMovie(dataUrl)
+        .then(res => {
+          this.setMoviesData(res);
+        })
     this.data.moreUrl = dataUrl;
   },
   onReady: function () {
@@ -66,18 +69,38 @@ Page({
   //       }
   //     })
   // },
+    // 绑定数据
+  setMoviesData: function(data) {
+      this.data.total = data.total;
+      this.setData({
+          movies: this.data.movies.concat(data.movies)
+      });
+      this.data.start += 20;
+      if (this.data.start > data.total) {
+        this.setData({
+          noneMore: true
+        });
+      }
+  },
   onPullDownRefresh: function () {
     this.data.movies = [];
     this.data.start = 0;
     let dataUrl = this.data.moreUrl + `?start=${this.data.start}`;
-    util.getMoreMovie(dataUrl, this).then(wx.stopPullDownRefresh);
+    util.getMoreMovie(dataUrl)
+        .then(res => {
+          wx.stopPullDownRefresh();
+          this.setMoviesData(res);
+        })
   },
   onReachBottom: function () {
     if (this.data.start > this.data.total) {
       return;
     }
     let dataUrl = this.data.moreUrl + `?start=${this.data.start}`;
-    util.getMoreMovie(dataUrl, this);
+    util.getMoreMovie(dataUrl)
+        .then(res => {
+          this.setMoviesData(res);
+        })
   },
   /*查看图片*/
   viewMoviePostImg: function (e) {
